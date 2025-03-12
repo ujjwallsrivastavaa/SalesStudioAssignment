@@ -7,11 +7,11 @@ import allRoutes from "./routes/allRoutes";
 import { Coupon } from "./models/coupons";
 dotenv.config();
 const PORT = process.env.PORT || 5000;
-
+const FRONTEND_URI = process.env.FRONTEND_URI || "http://localhost:5173";
 
 const app = express();
 
-app.use(cors());
+app.use(cors({ origin: FRONTEND_URI, credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 

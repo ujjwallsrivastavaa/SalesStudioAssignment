@@ -7,7 +7,6 @@ interface ICoupon extends Document {
 
 const CouponSchema = new Schema<ICoupon>({
   code: { type: String, required: true, unique: true },
-  isClaimed: { type: Boolean, default: false }
 });
 
 export const Coupon =  mongoose.model<ICoupon>("Coupon", CouponSchema);
